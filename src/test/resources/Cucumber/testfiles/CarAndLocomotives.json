@@ -1,0 +1,154 @@
+[{
+    "uri" : "/classification/Locomotive-Test",
+    "name" : "Locomotive",
+    "obsolete" : false,
+    "attributes" : {
+        "Wheel Arrangement" : {
+            "type" : "string",
+            "required" : true
+        },
+        "Prime Mover" : {
+            "type" : "string",
+            "required" : true
+        },
+        "Power Output" : {
+            "type" : "number",
+            "required" : true
+        }
+    }
+},{
+    "uri" : "/classification/Car-Test",
+    "name" : "Car",
+    "obsolete" : false,
+    "attributes" : {
+        "Year" : {
+            "type" : "date"
+        },
+        "Make" : {
+            "type" : "string",
+            "required" : true
+        },
+        "Model" : {
+            "type" : "string",
+            "required" : true
+        }
+    }
+},{
+    "uri" : "/classification/ES40DC-Test",
+    "name" : "ES40DC",
+    "obsolete" : false,
+    "parent" : "/classification/Locomotive-Test",
+    "attributes" : {
+        "Wheel Arrangement" : {
+            "type" : "string",
+            "value" : [ "C-C" ]
+        },
+        "Prime Mover" : {
+            "type" : "string",
+            "value" : [ "GEVO-12" ]
+        },
+        "Power Output" : {
+            "type" : "number",
+            "value" : [ 4000 ]
+        }
+    }
+},{
+    "uri" : "/classification/ES44DC-Test",
+    "name" : "ES44DC",
+    "obsolete" : false,
+    "parent" : "/classification/Locomotive-Test",
+    "attributes" : {
+        "Model" : {
+            "type" : "number"
+        }
+    }
+},{
+    "uri" : "/classification/Tesla-Test",
+    "name" : "Tesla",
+    "obsolete" : false,
+    "parent" : "/classification/Car-Test",
+    "attributes" : {
+        "Make" : {
+            "type" : "string",
+            "value" : [ "Tesla" ]
+        },
+        "Series" : {
+            "type" : "string",
+            "required" : true
+        }
+    }
+},{
+    "uri" : "/classification/Toyota-Test",
+    "name" : "Toyota",
+    "obsolete" : false,
+    "parent" : "/classification/Car-Test",
+    "attributes" : {
+        "Make" : {
+            "type" : "string",
+            "value" : [ "Toyota" ]
+        },
+        "ToyotaAttribute" : {
+            "type" : "string"
+        }
+    }
+},{
+    "uri" : "/classification/Camry-Test",
+    "name" : "Camry",
+    "obsolete" : false,
+    "parent" : "/classification/Toyota-Test",
+    "attributes" : {
+        "Model" : {
+            "type" : "string",
+            "value" : [ "Camry" ]
+        }
+    }
+},{
+    "uri" : "/classification/Prius-Test",
+    "name" : "Prius",
+    "obsolete" : false,
+    "parent" : "/classification/Toyota-Test",
+    "attributes" : {
+        "Model" : {
+            "type" : "string",
+            "value" : [ "Prius" ]
+        },
+        "HybridAttribute" : {
+            "type" : "string",
+            "value" : [ "I am a E-Hybrid." ]
+        }
+    }
+},{
+    "uri" : "/classification/Camry XL-Test",
+    "name" : "Camry XL",
+    "obsolete" : false,
+    "parent" : "/classification/Camry-Test",
+    "attributes" : {
+        "Model" : {
+            "type" : "string",
+            "value" : [ "Camry XL" ]
+        }
+    }
+},{
+    "uri" : "/classification/Camry GL-Test",
+    "name" : "Camry GL",
+    "obsolete" : false,
+    "parent" : "/classification/Camry-Test",
+    "attributes" : {
+        "Model" : {
+            "type" : "string",
+            "value" : [ "Camry GL" ]
+        }
+    }
+},{
+    "uri" : "/classification/Prius XL-Test",
+    "name" : "Prius XL",
+    "obsolete" : false,
+    "parent" : "/classification/Prius-Test",
+    "attributes" : { }
+},{
+    "uri" : "/classification/Prius E-Test",
+    "name" : "Prius E",
+    "obsolete" : false,
+    "parent" : "/classification/Prius-Test",
+    "attributes" : { }
+}]

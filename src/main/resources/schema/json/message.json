@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema",
+    "title": "Message",
+    "description": "Error message returned in case of error",
+    "type": "object",
+    "required": false,
+    "additionalProperties": false,
+    "properties": {
+        "message": {
+            "description": "message",
+            "type": "string",
+            "required": true
+        },
+        "errors": {
+            "description": "List of error and reason",
+            "type": "any",
+            "required": true
+        },
+        "errorId":{
+            "description": "unique error id to match exception at server",
+            "type": "string",
+            "required": false
+        },
+        "externalErrorId":{
+            "description": "unique error id to match exception at the external server",
+            "type": "string",
+            "required": false
+        }
+    }
+}

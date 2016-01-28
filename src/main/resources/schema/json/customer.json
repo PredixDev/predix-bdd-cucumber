@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema",
+    "title": "Customer",
+    "description": "Customer DTO",
+    "type": "object",
+    "required": false,
+    "additionalProperties": false,
+    "properties": {
+       "assetId":{
+            "description": "serial number for Asset",
+            "type": "string",
+            "required": false
+        },
+        "uri": {
+            "description": "System generated uri which can uniquely identify Asset, uri must be null or omitted when send JSon request for creating new Asset, uri must be sent when send JSon request for updating  new Asset, uri is always returned for creating, updating and retrieving Asset",
+            "type": "string",
+            "required": false
+        },
+        "tStamp":{
+            "description": "time stamp",
+            "type": "string",
+            "required": true
+        },
+        "name": {
+            "description": "Name",
+            "type": "string",
+            "required": true
+        },
+        "phone": {
+            "description": "Phone",
+            "type": "string",
+            "required": true
+        }
+    }
+}

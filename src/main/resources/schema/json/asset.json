@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema",
+    "title": "Asset",
+    "description": "Asset which is the instance of Type",
+    "type": "object",
+    "required": false,
+    "additionalProperties": false,
+    "properties": {
+        "uri": {
+            "description": "System generated uri which can uniquely identify Asset, uri must be null or omitted when send JSon request for creating new Asset, uri must be sent when send JSon request for updating  new Asset, uri is always returned for creating, updating and retrieving Asset",
+            "type": "string",
+            "required": false
+        },
+        "description": {
+            "description": "Description for the domain object",
+            "type": "string",
+            "required": false
+        },
+        "obsolete": {
+            "description": "Obsolete/non-obsolete Asset",
+            "type": "boolean",
+            "required": true,
+            "default": false
+        },
+        "assetId":{
+            "description": "serial number for Asset",
+            "type": "string",
+            "required": false
+        }
+    }
+}

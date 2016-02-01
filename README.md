@@ -132,6 +132,45 @@ Feature: Support to create/update/delete customer and query by customer ID numbe
  ``` 
 - BDD Cucumber plugin for Eclipse 
   https://github.com/rlogiacco/Natural/wiki/Installation-Guide
+
+## Example how to create Asset Management service and bind it to your dummy app for the BDD test  
+### Bind service to app
+
+``` 
+          //push your dummy app predix_assetbdd into Cloud
+$ cf push
+$ cf create-service predix-uaa Beta uaa_bdd_test -c '{"adminClientSecret":"admin_secret"}'
+$ cf bs predix_assetbdd uaa_bdd_test   
+$ cf restage predix_assetbdd
+$ cf e predix_assetbdd
+``` 
+
+### bind assset service with uaa service using "issuerId" from app environment
+
+``` 
+$ cf cs predix-asset Beta asset_bdd_test -c '{"trustedIssuerIds": ["https://ae902176-c00b-49ef-8ef3-f42ad6f24e8d.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token"]}'
+
+``` 
+### UAAC using "uri" from "predix-uaa" in app environment
+
+``` 
+$ uaac target https://ae902176-c00b-49ef-8ef3-f42ad6f24e8d.predix-uaa.run.aws-usw02-pr.ice.predix.io
+$ uaac token client get admin
+
+``` 
+
+### create new client using asset instanceId aka zone or Predix-Zone-Id (Header's name) from predix-asset\instanceId field value and put it as predix-asset.zones.<predix-asset\instanceId>.user    
+
+``` 
+$ uaac client add uaa_client_bdd 
+        --authorities openid,uaa.none,uaa.resource,predix-asset.zones.c026020a-95d0-4838-ba34-a7d26f083ee3.user 
+        --scope uaa.none,openid,predix-asset.zones.c026020a-95d0-4838-ba34-a7d26f083ee3.user 
+        --autoapprove openid 
+        --authorized_grant_types client_credentials
+
+$ uaac token client get uaa_client_bdd
+$ uaac context
+``` 
   
 
  
